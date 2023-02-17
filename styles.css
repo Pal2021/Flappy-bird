@@ -1,0 +1,85 @@
+
+*,*::after,*::before
+{
+    box-sizing: border-box;
+    font-family: 'Passero One', cursive;
+}
+
+body
+{
+    margin: 0;
+    overflow:hidden;
+    background: url("https://wallpapercave.com/wp/wp6957163.png");
+}
+
+.title
+{
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    inset:0;
+    margin: 0;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.subtitle
+{
+    margin-top: 0.5rem; 
+}
+
+.hide
+{
+    display: none;
+}
+
+.bird
+{
+    --bird-size:80px;
+    --bird-top:10;
+    position: absolute;
+    --opacity: 1;
+    opacity: var(--opacity);
+    background-color: hsl(50,75%,50%);
+    width: var(--bird-size);
+    height: var(--bird-size);
+    left: var(--bird-size);
+    top:calc(var(--bird-top)* 1px);
+    border-radius: 50%;
+    background: url("/bird.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pipe {
+    --opacity: 1;
+    position:absolute;
+    top:0;
+    opacity: var(--opacity);
+    bottom:0;
+    width:calc(var(--pipe-width) * 1px);
+    left:calc(var(--pipe-left) * 1px);
+  }
+  
+  .pipe > .segment {
+    position:absolute;
+    width:100%;
+    background: repeating-linear-gradient(
+      45deg,
+      #004206,
+      #5eff00 10px)
+  }
+  
+  .pipe > .top {
+    top:0;
+    bottom:calc(var(--hole-top) * 1px);
+  }
+
+    
+  .pipe > .bottom {
+    bottom:0;
+    top:calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height)*1px));
+  }
+
